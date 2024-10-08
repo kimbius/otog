@@ -7,7 +7,7 @@
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "dev": "tsup --watch --onSuccess 'NODE_ENV=development node --env-file=.env.dev --env-file=.env --enable-source-maps dist/index.js'",
     "build": "tsup",
-    "start": "node --enable-source-maps --env-file=.env dist/index.js",
+    "start": "prisma db push && node --enable-source-maps --env-file=.env dist/index.js",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "typecheck": "tsc --noEmit"
   },
