@@ -59,6 +59,4 @@ COPY --chown=nodejs:nodejs --from=installer /app .
 
 EXPOSE 8000
 
-RUN npx prisma db push
-
 CMD node apps/api/dist/index.js
