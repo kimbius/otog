@@ -5,7 +5,7 @@
   "types": "./src/index.ts",
   "browser": "./dist/index-browser.cjs",
   "scripts": {
-    "codegen": "prisma generate && pnpm build-zod && pnpm build-entrypoint && pnpm build-browser",
+    "codegen": "prisma generate && prisma db push && pnpm build-zod && pnpm build-entrypoint && pnpm build-browser",
     "build-zod": "tsup ./__generated__/zod/*.ts --outDir ./__generated__/zod",
     "build-entrypoint": "tsup ./src/index.ts --outDir dist",
     "build-browser": "tsup ./src/index-browser.ts --platform browser --outDir dist",
